@@ -24,5 +24,4 @@ matrix:
       script:
         - bundle install
         - bundle exec pod repo update
-        - bundle exec pod spec lint
-
+        - bundle exec pod spec lint --verbose
