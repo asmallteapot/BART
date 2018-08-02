@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/square/cocoapods-generate.git
+  revision: ad2b4d132e5809b682b2890eea6cc373231f4199
+  specs:
+    cocoapods-generate (1.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -35,7 +41,6 @@ GEM
       nap (~> 1.0)
     cocoapods-deintegrate (1.0.2)
     cocoapods-downloader (1.2.1)
-    cocoapods-generate (1.0.0)
     cocoapods-plugins (1.0.0)
       nap
     cocoapods-search (1.0.0)
@@ -128,7 +133,7 @@ PLATFORMS
 
 DEPENDENCIES
   cocoapods
-  cocoapods-generate
+  cocoapods-generate!
   guard
   guard-bundler
   guard-rubocop
