@@ -29,7 +29,12 @@ public struct ScheduledStop: Codable {
         self.station = try values.decode(String.self, forKey: .station)
         self.load = try values.decode(String.self, forKey: .load)
         self.level = try values.decode(String.self, forKey: .level)
-        self.departureTime = try values.decode(String?.self, forKey: .departureTime)
+
+        if values.contains(.departureTime) {
+            self.departureTime = try values.decode(String.self, forKey: .departureTime)
+        } else {
+            self.departureTime = nil
+        }
 
         let numberFormatter = NumberFormatter()
         numberFormatter.allowsFloats = false

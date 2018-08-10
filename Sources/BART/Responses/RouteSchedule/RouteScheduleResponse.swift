@@ -15,5 +15,5 @@ public struct RouteScheduleResponse: Codable {
     }
 
     public let schedule: RouteSchedule
-    public let message: String?
+    public let message: [String: [String: String]]?
 }

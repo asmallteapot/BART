@@ -67,14 +67,14 @@ extension APIService: TargetType {
                 "orig": "all",
                 "key": APIService.apiKey,
                 "json": "y"
-                ], encoding: URLEncoding.queryString)
+                ], encoding: Moya.URLEncoding.queryString)
         case .routes:
             return .requestParameters(parameters: [
                 "cmd": "routeinfo",
                 "route": "all",
                 "key": APIService.apiKey,
                 "json": "y"
-                ], encoding: URLEncoding.queryString)
+                ], encoding: Moya.URLEncoding.queryString)
         case let .routeSchedule(routeNumber, kind):
             return .requestParameters(parameters: [
                 "cmd": "routesched",
@@ -82,13 +82,13 @@ extension APIService: TargetType {
                 "date": kind.rawValue,
                 "key": APIService.apiKey,
                 "json": "y"
-                ], encoding: URLEncoding.queryString)
+                ], encoding: Moya.URLEncoding.queryString)
         case .stations:
             return .requestParameters(parameters: [
                 "cmd": "stns",
                 "key": APIService.apiKey,
                 "json": "y"
-                ], encoding: URLEncoding.queryString)
+                ], encoding: Moya.URLEncoding.queryString)
         }
     }
 
