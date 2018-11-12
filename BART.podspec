@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'BART'
-  s.version      = '0.0.1'
+  s.version      = '0.0.2'
   s.summary      = 'Swift module for accessing the BART API'
 
   s.description  = <<-DESC
