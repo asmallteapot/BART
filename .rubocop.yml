@@ -1,3 +1,6 @@
+Metrics/BlockLength:
+  Exclude:
+    - '*.podspec'
 Naming/FileName:
   Enabled: false
 Layout/IndentHeredoc:

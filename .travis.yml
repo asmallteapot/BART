@@ -1,7 +1,23 @@
 os: osx
 osx_image: xcode10.1
 language: objective-c
-script:
-  - bundle install
+cache:
+  - bundler
+  - cocoapods
+install:
   - bundle exec pod repo update
+  - bundle exec pod gen
+xcode_workspace: gen/BART/BART.xcworkspace
+before_script:
+  - bundle exec rake rubocop
   - bundle exec pod spec lint --verbose
+matrix:
+  include:
+    - xcode_scheme: BART-iOS
+      xcode_destination: platform=iOS Simulator,OS=12.1,name=iPhone XS Max
+    - xcode_scheme: BART-macOS
+      xcode_destination: platform=OS X,arch=x86_64
+    - xcode_scheme: BART-tvOS
+      xcode_destination: platform=tvOS Simulator,OS=12.1,name=Apple TV 4K
+    - xcode_scheme: BART-watchOS
+      xcode_destination: platform=iOS Simulator,OS=1.2,name=iPhone XS Max
