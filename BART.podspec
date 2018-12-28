@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'BART'
-  s.version      = '0.0.2'
+  s.version      = '0.0.3'
   s.summary      = 'Swift module for accessing the BART API'
 
   s.description  = <<-DESC
@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
   s.watchos.deployment_target = '4.0'
 
   s.framework = 'Foundation'
-  s.dependency 'Moya', '~> 11.0'
+  s.dependency 'Moya', '~> 12.0.1'
 
   s.swift_version = '4.2'
 
