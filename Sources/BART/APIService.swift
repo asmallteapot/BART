@@ -1,12 +1,29 @@
 import Foundation
 import Moya
 
+/// The BART API service.
 public enum APIService {
+    /// The public BART API key.
     public static let apiKey = "MW9S-E7SL-26DU-VV8V"
 
+    /// Fetch estimated departures for every station
+    /// - SeeAlso:
+    /// [BART API documentation](http://api.bart.gov/docs/etd/etd.aspx)
     case estimatedDepartures
+
+    /// Fetch the list of routes
+    /// - SeeAlso:
+    /// [BART API documentation](http://api.bart.gov/docs/route/routeinfo.aspx)
     case routes
+
+    /// Fetch a route's schedule
+    /// - SeeAlso:
+    /// [BART API documentation](http://api.bart.gov/docs/sched/routesched.aspx)
     case routeSchedule(route: Int, kind: ScheduleKind)
+
+    /// Fetch the list of stations
+    /// - SeeAlso:
+    /// [BART API documentation](http://api.bart.gov/docs/stn/stns.aspx)
     case stations
 }
 

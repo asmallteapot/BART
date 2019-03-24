@@ -1,13 +1,6 @@
-//
-//  ScheduledTrain.swift
-//  Arrivals
-//
-//  Created by Ellen Teapot on 2/12/18.
-//  Copyright © 2018 Ellen Teapot. All rights reserved.
-//
-
 import Foundation
 
+/// A scheduled train on a route.
 public struct ScheduledTrain: Codable {
     enum CodingKeys: String, CodingKey {
         case identifier = "@trainId"
@@ -16,8 +9,15 @@ public struct ScheduledTrain: Codable {
         case stops = "stop"
     }
 
+    /// The train's identifier.
     public let identifier: String
+
+    /// The train's index.
     public let trainIndex: String
+
+    /// The train's index.
     public let index: String
+
+    /// The train's scheduled stops.
     public let stops: [ScheduledStop]
 }

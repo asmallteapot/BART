@@ -1,13 +1,6 @@
-//
-//  ScheduledStop.swift
-//  Arrivals
-//
-//  Created by Ellen Teapot on 2/12/18.
-//  Copyright © 2018 Ellen Teapot. All rights reserved.
-//
-
 import Foundation
 
+/// A train's scheduled stop on a route.
 public struct ScheduledStop: Codable {
     enum CodingKeys: String, CodingKey {
         case station = "@station"
@@ -17,10 +10,19 @@ public struct ScheduledStop: Codable {
         case bikesAllowed = "@bikeflag"
     }
 
+    /// The station code of the scheduled stop.
     public let station: String
+
+    /// The predicted load level of the train at this stop.
     public let load: String
+
+    /// The predicted load level of the train at this stop.
     public let level: String
+
+    /// The estimated departure time.
     public let departureTime: String?
+
+    /// Indicates whether bikes are allowed on this train.
     public let bikesAllowed: Bool
 
     public init(from decoder: Decoder) throws {

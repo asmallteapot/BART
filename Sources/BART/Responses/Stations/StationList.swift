@@ -1,17 +1,11 @@
-//
-//  StationList.swift
-//  Arrivals
-//
-//  Created by Ellen Teapot on 2/8/18.
-//  Copyright © 2018 Ellen Teapot. All rights reserved.
-//
-
 import Foundation
 
+/// TODO: Fold into `StationsResponse`?
 public struct StationList: Codable {
     enum CodingKeys: String, CodingKey {
         case stations = "station"
     }
 
+    /// A list of `Station` values.
     public let stations: [Station]
 }

@@ -1,19 +1,15 @@
-//
-//  StationsResponse.swift
-//  Arrivals
-//
-//  Created by Ellen Teapot on 2/8/18.
-//  Copyright © 2018 Ellen Teapot. All rights reserved.
-//
-
 import Foundation
 
+/// Response containing the list of stations in the BART system.
 public struct StationsResponse: Codable {
     enum CodingKeys: String, CodingKey {
         case stations
         case message
     }
 
+    /// The list of stations in the BART system.
     public let stations: StationList
+
+    /// An optional response message.
     public let message: String?
 }

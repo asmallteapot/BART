@@ -1,13 +1,6 @@
-//
-//  EstimatedDepartureDestination.swift
-//  Arrivals
-//
-//  Created by Ellen Teapot on 2/8/18.
-//  Copyright © 2018 Ellen Teapot. All rights reserved.
-//
-
 import Foundation
 
+/// The estimated departures toward a specific destination.
 public struct EstimatedDepartureDestination: Codable {
     enum CodingKeys: String, CodingKey {
         case name = "destination"
@@ -16,9 +9,16 @@ public struct EstimatedDepartureDestination: Codable {
         case departureTimes = "estimate"
     }
 
+    /// The name of the destination.
     public let name: String
+
+    /// The station code of the destination.
     public let abbreviation: String
+
+    /// If `true`, the departures to this destination
     public let limited: Bool
+
+    /// The estimated departure times for this destination.
     public let departureTimes: [EstimatedDepartureTime]
 
     public init(from decoder: Decoder) throws {

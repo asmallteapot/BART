@@ -1,13 +1,6 @@
-//
-//  EstimatedDepartureTime.swift
-//  Arrivals
-//
-//  Created by Ellen Teapot on 2/8/18.
-//  Copyright © 2018 Ellen Teapot. All rights reserved.
-//
-
 import Foundation
 
+/// An estimated departure time for a specific destination.
 public struct EstimatedDepartureTime: Codable {
     enum CodingKeys: String, CodingKey {
         case minutes
@@ -32,7 +25,10 @@ public struct EstimatedDepartureTime: Codable {
     /// The number of cars on the train.
     public let length: Int
 
+    /// The color name of the train's route.
     public let color: String
+
+    /// The hex color of the train's route.
     public let hexColor: String
 
     /// Indicates whether bikes are allowed on the train.
