@@ -37,6 +37,7 @@ Packages/
 Package.pins
 Package.resolved
 .build/
+*.xcodeproj
 
 # CocoaPods
 Pods/
@@ -57,3 +58,6 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots/**/*.png
 fastlane/test_output
+
+# jazzy
+docs/
