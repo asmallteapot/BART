@@ -11,3 +11,16 @@ public enum ScheduleKind: String {
     /// A typical Sunday schedule
     case sunday = "su"
 }
+
+extension ScheduleKind: CustomDebugStringConvertible {
+    public var debugDescription: String {
+        switch self {
+        case .weekday:
+            return "weekday"
+        case .saturday:
+            return "saturday"
+        case .sunday:
+            return "sunday"
+        }
+    }
+}
