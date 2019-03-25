@@ -14,13 +14,6 @@ public struct Station: Codable {
         case postCode = "zipcode"
     }
 
-    // TODO: remove?
-    enum DecodingError: Error {
-        case stringToBool(CodingKeys)
-        case stringToDouble(CodingKeys)
-        case stringToInt(CodingKeys)
-    }
-
     /// The name of the station.
     public let name: String
 
