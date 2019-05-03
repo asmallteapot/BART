@@ -1,0 +1,9 @@
+author: 'Ellen Teapot'
+author_url: https://asmallteapot.com/
+copyright: '(c) 2019 Ellen Teapot. See LICENSE for details.'
+github_url: https://github.com/asmallteapot/BART
+root_url: https://asmallteapot.github.io/BART/
+clean: true
+xcodebuild_arguments: ['-scheme', 'BART-Package']
+module: 'BART'
+module_version: '0.1.0'

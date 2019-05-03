@@ -1,22 +1,18 @@
-//
-//  NumberFormatter.swift
-//  Arrivals
-//
-//  Created by Ellen Teapot on 2/18/18.
-//  Copyright © 2018 Ellen Teapot. All rights reserved.
-//
-
 import Foundation
 
+/// Swift convenience wrappers around `NSNumber`
 extension NumberFormatter {
+    /// Returns a `Bool?` value created by parsing a given string.
     public func bool(from string: String) -> Bool? {
         return self.number(from: string)?.boolValue
     }
 
+    /// Returns a `Double?` value created by parsing a given string.
     public func double(from string: String) -> Double? {
         return self.number(from: string)?.doubleValue
     }
 
+    /// Returns an `Int?` value created by parsing a given string.
     public func int(from string: String) -> Int? {
         return self.number(from: string)?.intValue
     }

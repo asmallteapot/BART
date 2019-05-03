@@ -1,17 +1,11 @@
-//
-//  RouteSchedule.swift
-//  Arrivals
-//
-//  Created by Ellen Teapot on 2/12/18.
-//  Copyright © 2018 Ellen Teapot. All rights reserved.
-//
-
 import Foundation
 
+/// The schedule for a specific route.
 public struct RouteSchedule: Codable {
     enum CodingKeys: String, CodingKey {
         case trains = "train"
     }
 
+    /// The list of scheduled trains.
     public let trains: [ScheduledTrain]
 }

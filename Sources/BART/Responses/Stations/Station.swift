@@ -1,13 +1,6 @@
-//
-//  Station.swift
-//  Arrivals
-//
-//  Created by Ellen Teapot on 2/8/18.
-//  Copyright © 2018 Ellen Teapot. All rights reserved.
-//
-
 import Foundation
 
+/// A station in the BART system.
 public struct Station: Codable {
     enum CodingKeys: String, CodingKey {
         case name
@@ -21,20 +14,32 @@ public struct Station: Codable {
         case postCode = "zipcode"
     }
 
-    enum DecodingError: Error {
-        case stringToBool(CodingKeys)
-        case stringToDouble(CodingKeys)
-        case stringToInt(CodingKeys)
-    }
-
+    /// The name of the station.
     public let name: String
+
+    /// The internal station code.
     public let abbreviation: String
+
+    /// The station's latitude.
     public let latitude: Double
+
+    /// The station's longitude.
     public let longitude: Double
+
+    /// The station's street address.
     public let address: String
+
+    /// The city the station is located in.
     public let city: String
+
+    /// The county the station is located in.
     public let county: String
+
+    /// The state the station is located in.
+    /// - Note: Yes, BART is ambitious enough to include a field for this.
     public let state: String
+
+    /// The station's postal code.
     public let postCode: String
 
     public init(from decoder: Decoder) throws {
