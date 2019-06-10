@@ -3,5 +3,5 @@ import XCTest
 import BARTTests
 
 var tests = [XCTestCaseEntry]()
-tests += BARTTests.allTests()
+tests += APIServiceTests.allTests()
 XCTMain(tests)
