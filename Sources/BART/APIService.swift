@@ -6,6 +6,11 @@ public enum APIService {
     /// The public BART API key.
     public static let apiKey = "MW9S-E7SL-26DU-VV8V"
 
+    /// Fetch service advisories
+    /// - SeeAlso:
+    /// [BART API documentation](http://api.bart.gov/docs/bsa/bsa.aspx)
+    case serviceAdvisories
+
     /// Fetch estimated departures for every station
     /// - SeeAlso:
     /// [BART API documentation](http://api.bart.gov/docs/etd/etd.aspx)
@@ -30,6 +35,8 @@ public enum APIService {
 extension APIService {
     fileprivate var sampleDataName: String {
         switch self {
+        case .serviceAdvisories:
+            return "serviceAdvisories"
         case .estimatedDepartures:
             return "estimatedDepartures"
         case .routes:
@@ -53,6 +60,8 @@ extension APIService: TargetType {
 
     public var path: String {
         switch self {
+        case .serviceAdvisories:
+            return "bsa.aspx"
         case .estimatedDepartures:
             return "etd.aspx"
         case .routes:
@@ -78,6 +87,13 @@ extension APIService: TargetType {
 
     public var task: Task {
         switch self {
+        case .serviceAdvisories:
+            return .requestParameters(parameters: [
+                "cmd": "bsa",
+                "orig": "all",
+                "key": APIService.apiKey,
+                "json": "y"
+                ], encoding: Moya.URLEncoding.queryString)
         case .estimatedDepartures:
             return .requestParameters(parameters: [
                 "cmd": "etd",
